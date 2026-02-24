@@ -1,35 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swamy Kandula | Robotics & Automation Engineer</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: black; color: #d4d4d8; }
-        .font-mono { font-family: 'Fira Code', monospace; }
-        .selection-purple::selection { background: rgba(168, 85, 247, 0.3); color: white; }
-        html { scroll-behavior: smooth; }
-        .scanline {
-            width: 100%;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.05);
-            position: absolute;
-            bottom: 50%;
-            animation: scan 4s linear infinite;
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
         }
-        @keyframes scan {
-            0% { bottom: 100%; }
-            100% { bottom: 0%; }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .selection-purple::selection {
+            background-color: rgba(168, 85, 247, 0.3);
+            color: white;
         }
     </style>
 </head>
-<body class="selection-purple relative overflow-x-hidden">
+<body class="bg-black text-zinc-300 selection-purple relative overflow-x-hidden">
 
     <!-- Background Pattern -->
     <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-0" 
@@ -37,27 +32,42 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 right-0 p-6 z-50 md:p-10">
-        <div class="flex flex-col items-end gap-2 md:flex-row md:gap-8 font-mono text-xs uppercase tracking-[0.2em] bg-black/50 backdrop-blur-sm p-4 rounded-lg md:bg-transparent">
-            <a href="#home" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>home</a>
-            <a href="#projects" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>projects</a>
-            <a href="#skills" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>skills</a>
-            <a href="#about-me" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>about-me</a>
-            <a href="#contacts" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>contacts</a>
+    <nav class="fixed top-0 right-0 p-6 z-50 md:p-10 bg-black/50 backdrop-blur-md md:bg-transparent w-full md:w-auto">
+        <div class="flex flex-row flex-wrap justify-end gap-4 md:gap-8 font-mono text-[10px] md:text-xs uppercase tracking-[0.2em]">
+            <a href="#home" class="hover:text-purple-400 transition-colors relative group py-1">
+                <span class="text-purple-500 mr-1 opacity-50">#</span>home
+            </a>
+            <a href="#projects" class="hover:text-purple-400 transition-colors relative group py-1">
+                <span class="text-purple-500 mr-1 opacity-50">#</span>projects
+            </a>
+            <a href="#skills" class="hover:text-purple-400 transition-colors relative group py-1">
+                <span class="text-purple-500 mr-1 opacity-50">#</span>skills
+            </a>
+            <a href="#about-me" class="hover:text-purple-400 transition-colors relative group py-1">
+                <span class="text-purple-500 mr-1 opacity-50">#</span>about-me
+            </a>
+            <a href="#contacts" class="hover:text-purple-400 transition-colors relative group py-1">
+                <span class="text-purple-500 mr-1 opacity-50">#</span>contacts
+            </a>
         </div>
     </nav>
 
-    <!-- Sidebar -->
-    <div class="fixed left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 z-40 text-zinc-500">
+    <!-- Sidebar Elements -->
+    <div class="fixed left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 z-40">
         <div class="h-24 w-[1px] bg-white/10"></div>
-        <a href="https://github.com/swamykandula" target="_blank" class="hover:text-purple-400 transition-colors"><i data-lucide="github" size="18"></i></a>
-        <a href="#" class="hover:text-purple-400 transition-colors"><i data-lucide="linkedin" size="18"></i></a>
+        <a href="https://github.com/swamykandula" target="_blank" class="hover:text-purple-400 transition-colors">
+            <i data-lucide="github" class="w-[18px] h-[18px]"></i>
+        </a>
+        <a href="#" class="hover:text-purple-400 transition-colors">
+            <i data-lucide="linkedin" class="w-[18px] h-[18px]"></i>
+        </a>
         <div class="h-24 w-[1px] bg-white/10"></div>
     </div>
 
     <main class="max-w-5xl mx-auto px-6 py-20 relative z-10">
+        
         <!-- Hero Section -->
-        <section id="home" class="min-h-[80vh] flex flex-col justify-center items-start pt-20">
+        <section id="home" class="min-h-[90vh] flex flex-col justify-center items-start pt-20">
             <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="flex-1 order-2 md:order-1">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -66,6 +76,7 @@
                     <p class="text-lg md:text-xl text-zinc-400 mb-8 max-w-xl font-mono leading-relaxed">
                         Robotics & Automation Engineer | Specializing in <span class="text-white">Intelligent Systems</span> and Advanced Engineering.
                     </p>
+                    
                     <div class="inline-block border border-white/10 p-4 mb-8 bg-zinc-900/30">
                         <div class="flex items-center gap-3">
                             <div class="w-2 h-2 bg-purple-500 animate-pulse"></div>
@@ -74,179 +85,346 @@
                             </span>
                         </div>
                     </div>
+
                     <div>
-                        <a href="#projects" class="inline-flex items-center gap-3 border border-purple-500 text-purple-500 px-8 py-3 font-mono text-sm hover:bg-purple-500/10 transition-all">
-                            View My Work <i data-lucide="arrow-right" size="16"></i>
+                        <a href="#projects" 
+                           class="inline-flex items-center gap-3 border border-purple-500 text-purple-500 px-8 py-3 font-mono text-sm hover:bg-purple-500/10 transition-all">
+                            View My Work <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
+
+                <!-- Profile Picture Frame -->
                 <div class="relative order-1 md:order-2">
                     <div class="w-64 h-64 md:w-80 md:h-80 border border-purple-500/30 relative z-10 p-2 group overflow-hidden bg-zinc-900">
                         <div class="w-full h-full relative overflow-hidden bg-zinc-800">
-                            <img src="https://i.postimg.cc/T3bjvWK2/Whats-App-Image-2026-02-24-at-14-45-26.jpg" alt="Swamy" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-                            <div class="scanline"></div>
+                            <img src="https://i.postimg.cc/T3bjvWK2/Whats-App-Image-2026-02-24-at-14-45-26.jpg" 
+                                 alt="Swamy Kandula" 
+                                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                                 onerror="this.src='https://via.placeholder.com/400x400?text=Swamy+Kandula'">
+                            <div class="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-20 bg-[length:100%_2px,3px_100%]"></div>
                         </div>
                     </div>
-                    <div class="absolute -top-4 -right-4 w-20 h-20 border-t border-r border-purple-500"></div>
-                    <div class="absolute -bottom-4 -left-4 w-20 h-20 border-b border-l border-purple-500"></div>
+                    <div class="absolute -top-4 -right-4 w-20 h-20 border-t border-r border-purple-500 pointer-events-none transition-all group-hover:-top-2 group-hover:-right-2"></div>
+                    <div class="absolute -bottom-4 -left-4 w-20 h-20 border-b border-l border-purple-500 pointer-events-none transition-all group-hover:-bottom-2 group-hover:-left-2"></div>
+                    <div class="absolute -bottom-10 -right-10 w-24 h-24 grid grid-cols-6 gap-2 opacity-20 hidden md:grid">
+                        <!-- Dots manually rendered via HTML for simplicity -->
+                        <div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div>
+                        <div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div>
+                        <div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div>
+                        <div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div><div class="w-1 h-1 bg-white rounded-full"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Quote -->
-        <section class="py-32">
+        <!-- Quote Section -->
+        <section class="py-24">
             <div class="relative max-w-2xl mx-auto text-center border-l-2 border-purple-500/30 pl-8 md:pl-12 py-4">
-                <p class="text-xl md:text-2xl font-mono italic text-zinc-300">
-                    “Engineering is not just about building machines; it's about solving the invisible friction between potential and reality.”
+                <span class="absolute -top-10 left-0 text-7xl font-serif text-purple-500/20">“</span>
+                <p class="text-xl md:text-2xl font-mono italic text-zinc-300 leading-relaxed text-left md:text-center">
+                    Engineering is not just about building machines; it's about solving the invisible friction between potential and reality.
                 </p>
-                <span class="block mt-4 text-xs font-mono uppercase tracking-widest text-zinc-500">— S. Kandula</span>
+                <span class="block mt-4 text-xs font-mono uppercase tracking-widest text-zinc-500 text-left md:text-center">— S. Kandula</span>
             </div>
         </section>
 
-        <!-- Projects -->
-        <section id="projects" class="py-20">
-            <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl font-mono font-bold text-white"><span class="text-purple-500 mr-2">#</span>projects</h2>
-                <div class="h-[1px] bg-white/10 flex-grow"></div>
+        <!-- Projects Section -->
+        <section id="projects" class="pt-20">
+            <div class="flex items-center gap-4 mb-12 group">
+                <h2 class="text-2xl font-mono font-bold text-white flex items-center">
+                    <span class="text-purple-500 mr-2">#</span>projects
+                </h2>
+                <div class="h-[1px] bg-white/10 flex-grow group-hover:bg-purple-500/30 transition-colors"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
-                <!-- Projects injected here -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="project-container">
+                <!-- Projects will be injected or kept static -->
+                <div class="border border-white/10 p-6 flex flex-col justify-between hover:border-purple-500/50 transition-all duration-300 bg-zinc-900/20 group">
+                    <div>
+                        <div class="text-[10px] uppercase tracking-widest text-zinc-500 mb-4 font-mono group-hover:text-purple-400">Unity | Leap Motion | Physics Engine</div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono">Intuitive Drone Control</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6 font-sans italic">A virtual environment for pilot training using Leap Motion for hand tracking and Unity for high-fidelity physics simulation.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center gap-2 text-xs font-mono text-white border border-white/20 px-4 py-2 w-fit hover:bg-purple-500/10 hover:border-purple-500 transition-all">Live <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <div class="border border-white/10 p-6 flex flex-col justify-between hover:border-purple-500/50 transition-all duration-300 bg-zinc-900/20 group">
+                    <div>
+                        <div class="text-[10px] uppercase tracking-widest text-zinc-500 mb-4 font-mono group-hover:text-purple-400">MATLAB | PID | Genetic Algorithms</div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono">Active Control of Railway Pantograph</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6 font-sans italic">Optimizing PID control parameters via Genetic Algorithms to minimize contact force fluctuations in high-speed rail systems.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center gap-2 text-xs font-mono text-white border border-white/20 px-4 py-2 w-fit hover:bg-purple-500/10 hover:border-purple-500 transition-all">Live <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <div class="border border-white/10 p-6 flex flex-col justify-between hover:border-purple-500/50 transition-all duration-300 bg-zinc-900/20 group">
+                    <div>
+                        <div class="text-[10px] uppercase tracking-widest text-zinc-500 mb-4 font-mono group-hover:text-purple-400">C# | .NET | WinForms</div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono">Input Control Module for PantOHE</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6 font-sans italic">A comprehensive interface designed for simulating interactions between pantographs and catenary systems.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center gap-2 text-xs font-mono text-white border border-white/20 px-4 py-2 w-fit hover:bg-purple-500/10 hover:border-purple-500 transition-all">Live <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <div class="border border-white/10 p-6 flex flex-col justify-between hover:border-purple-500/50 transition-all duration-300 bg-zinc-900/20 group">
+                    <div>
+                        <div class="text-[10px] uppercase tracking-widest text-zinc-500 mb-4 font-mono group-hover:text-purple-400">Fusion 360 | Fabrication | Assembly</div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono">Crimson Fleet (Robo Wars)</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6 font-sans italic">Complete mechanical design and fabrication of a competitive combat robot, emphasizing durability and kinetic impact.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center gap-2 text-xs font-mono text-white border border-white/20 px-4 py-2 w-fit hover:bg-purple-500/10 hover:border-purple-500 transition-all">Live <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                </div>
             </div>
         </section>
 
-        <!-- Skills -->
-        <section id="skills" class="py-20">
-            <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl font-mono font-bold text-white"><span class="text-purple-500 mr-2">#</span>skills</h2>
-                <div class="h-[1px] bg-white/10 flex-grow"></div>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 pt-20">
+            <div class="flex items-center gap-4 mb-12 group">
+                <h2 class="text-2xl font-mono font-bold text-white flex items-center">
+                    <span class="text-purple-500 mr-2">#</span>skills
+                </h2>
+                <div class="h-[1px] bg-white/10 flex-grow group-hover:bg-purple-500/30 transition-colors"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12" id="skills-grid">
-                <!-- Skills injected here -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Skill Group 1 -->
+                <div class="flex flex-col gap-6">
+                    <h3 class="text-xs font-mono uppercase tracking-[0.2em] text-purple-500 flex items-center gap-2">
+                        <div class="w-4 h-[1px] bg-purple-500"></div>Software/CAD
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Inventor</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Fusion 360</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">AutoCAD</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">SolidWorks</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Catia</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Blender</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Ansys</span>
+                    </div>
+                </div>
+                <!-- Skill Group 2 -->
+                <div class="flex flex-col gap-6">
+                    <h3 class="text-xs font-mono uppercase tracking-[0.2em] text-purple-500 flex items-center gap-2">
+                        <div class="w-4 h-[1px] bg-purple-500"></div>Programming & Robotics
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">C#</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Python</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Windows Forms</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">MATLAB</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">ROS</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Moveit</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Gazebo</span>
+                    </div>
+                </div>
+                <!-- Skill Group 3 -->
+                <div class="flex flex-col gap-6">
+                    <h3 class="text-xs font-mono uppercase tracking-[0.2em] text-purple-500 flex items-center gap-2">
+                        <div class="w-4 h-[1px] bg-purple-500"></div>Fabrication
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Machining</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Drilling</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Lathe</span>
+                        <span class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white hover:border-purple-500/50 transition-all bg-zinc-900/40">Sand Casting</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- About Me -->
-        <section id="about-me" class="py-20">
-            <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl font-mono font-bold text-white"><span class="text-purple-500 mr-2">#</span>about-me</h2>
-                <div class="h-[1px] bg-white/10 flex-grow"></div>
+        <!-- About Me Section -->
+        <section id="about-me" class="py-20 pt-20">
+            <div class="flex items-center gap-4 mb-12 group">
+                <h2 class="text-2xl font-mono font-bold text-white flex items-center">
+                    <span class="text-purple-500 mr-2">#</span>about-me
+                </h2>
+                <div class="h-[1px] bg-white/10 flex-grow group-hover:bg-purple-500/30 transition-colors"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                 <div>
-                    <p class="text-zinc-400 mb-6 leading-relaxed">Based in Berlin, Germany, I bridge the gap between Mechanical Engineering and Robotics. I thrive on analytical problem-solving and a hands-on approach to building technical systems.</p>
-                    <div class="space-y-8">
+                    <p class="text-zinc-400 leading-relaxed mb-6 font-mono text-sm">Hello, I'm <span class="text-white">Swamy</span>!</p>
+                    <p class="text-zinc-400 leading-relaxed mb-6">Based in Berlin, Germany, I bridge the gap between Mechanical Engineering and Robotics. My work combines control systems, machine learning, and embedded systems to develop real-world robotic solutions. I thrive on analytical problem-solving and a hands-on approach to building technical systems.</p>
+                    
+                    <div class="mt-12 space-y-8">
                         <div>
-                            <h4 class="text-white font-mono text-sm mb-4 uppercase tracking-widest">Education</h4>
-                            <div class="border-l border-white/10 ml-2 pl-6 space-y-4">
-                                <div>
+                            <h4 class="text-white font-mono text-sm mb-4 uppercase tracking-widest flex items-center gap-2">
+                                <i data-lucide="layers" class="w-3.5 h-3.5 text-purple-500"></i> Education
+                            </h4>
+                            <div class="border-l border-white/10 ml-2 pl-6 space-y-6">
+                                <div class="relative">
+                                    <div class="absolute -left-[27px] top-1 w-2 h-2 rounded-full bg-purple-500"></div>
                                     <p class="text-sm font-mono text-white">Master’s in Robotics and Automation</p>
                                     <p class="text-xs text-zinc-500">SRH Uni Berlin | 2025 - Present</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[27px] top-1 w-2 h-2 rounded-full bg-zinc-700"></div>
+                                    <p class="text-sm font-mono text-white">B.Tech in Mechanical Engineering</p>
+                                    <p class="text-xs text-zinc-500">Amrita School of Engineering | 2020 - 2024</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-white font-mono text-sm mb-4 uppercase tracking-widest flex items-center gap-2">
+                                <i data-lucide="wrench" class="w-3.5 h-3.5 text-purple-500"></i> Work Experience
+                            </h4>
+                            <div class="border-l border-white/10 ml-2 pl-6 space-y-6">
+                                <div class="relative">
+                                    <div class="absolute -left-[27px] top-1 w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <p class="text-sm font-mono text-white">Robotics Intern</p>
+                                    <p class="text-xs text-zinc-500">Orangewood Labs | July 2024 - Jan 2025</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[27px] top-1 w-2 h-2 rounded-full bg-zinc-700"></div>
+                                    <p class="text-sm font-mono text-white">Research Intern</p>
+                                    <p class="text-xs text-zinc-500">IIT Delhi | July 2023 - July 2024</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <button class="mt-12 flex items-center gap-2 border border-white/10 px-6 py-2 text-xs font-mono hover:border-purple-500 transition-all">
+                        Download Resume <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+                    </button>
                 </div>
-                <div class="flex items-center justify-center p-8 bg-zinc-900/10 border border-white/5">
-                    <div class="animate-spin-slow"><i data-lucide="cpu" class="text-purple-500/40" size="80"></i></div>
+
+                <div class="flex flex-col items-center justify-center p-8 bg-zinc-900/10 border border-white/5 relative">
+                    <div class="w-full aspect-square border-2 border-dashed border-white/5 flex items-center justify-center rounded-full opacity-30">
+                        <div class="w-3/4 aspect-square border-2 border-purple-500/20 rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite]">
+                            <div class="w-1/2 aspect-square border-2 border-dashed border-white/10 rounded-full flex items-center justify-center">
+                                <i data-lucide="cpu" class="w-12 h-12 text-purple-500/40"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center max-w-xs">
+                        <h4 class="text-white font-mono text-xs uppercase mb-2">Expertise</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed italic">High-fidelity CAD modeling, mechanical design for robotic applications, and control logic implementation.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contacts -->
-        <section id="contacts" class="py-20">
-            <div class="flex items-center gap-4 mb-12">
-                <h2 class="text-2xl font-mono font-bold text-white"><span class="text-purple-500 mr-2">#</span>contacts</h2>
-                <div class="h-[1px] bg-white/10 flex-grow"></div>
+        <!-- Contacts Section -->
+        <section id="contacts" class="py-20 pt-20">
+            <div class="flex items-center gap-4 mb-12 group">
+                <h2 class="text-2xl font-mono font-bold text-white flex items-center">
+                    <span class="text-purple-500 mr-2">#</span>contacts
+                </h2>
+                <div class="h-[1px] bg-white/10 flex-grow group-hover:bg-purple-500/30 transition-colors"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <p class="text-zinc-400 mb-8">Interested in collaboration? Let's connect.</p>
-                    <div class="space-y-4 font-mono text-sm text-zinc-500">
-                        <div class="flex items-center gap-4"><i data-lucide="mail" class="text-purple-500" size="16"></i> <a href="mailto:kandulaswamy3@gmail.com">kandulaswamy3@gmail.com</a></div>
-                        <div class="flex items-center gap-4"><i data-lucide="github" class="text-purple-500" size="16"></i> <a href="https://github.com/swamykandula">swamykandula</a></div>
+                    <p class="text-zinc-400 mb-8 max-w-sm">Interested in collaboration or innovative engineering projects? Let's connect. I'm always open to discussing technical challenges and future systems.</p>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-4 text-sm font-mono text-zinc-500">
+                            <i data-lucide="mail" class="w-4 h-4 text-purple-500"></i>
+                            <a href="mailto:kandulaswamy3@gmail.com" class="hover:text-white transition-colors">kandulaswamy3@gmail.com</a>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm font-mono text-zinc-500">
+                            <i data-lucide="github" class="w-4 h-4 text-purple-500"></i>
+                            <a href="https://github.com/swamykandula" target="_blank" class="hover:text-white transition-colors">swamykandula</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Form -->
                 <div class="border border-white/10 p-8 bg-zinc-900/20">
+                    <h4 class="text-white font-mono text-xs uppercase tracking-widest mb-6">Message me here</h4>
                     <form id="contact-form" class="space-y-4">
-                        <input type="email" id="email" required placeholder="Your Email" class="w-full bg-black border border-white/10 p-3 text-sm font-mono text-white outline-none focus:border-purple-500">
-                        <textarea id="message" required rows="4" placeholder="Your Message" class="w-full bg-black border border-white/10 p-3 text-sm font-mono text-white outline-none focus:border-purple-500 resize-none"></textarea>
-                        <button type="submit" class="flex items-center gap-2 border border-purple-500 text-purple-500 px-6 py-2 text-xs font-mono hover:bg-purple-500/10">SEND MESSAGE <i data-lucide="send" size="14"></i></button>
+                        <div>
+                            <label class="block text-[10px] uppercase font-mono text-zinc-500 mb-2">Your Email</label>
+                            <input type="email" id="email" required placeholder="name@example.com"
+                                   class="w-full bg-black border border-white/10 p-3 text-sm font-mono text-white focus:border-purple-500 outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase font-mono text-zinc-500 mb-2">Your Message</label>
+                            <textarea id="message" required rows="4" placeholder="Hello Swamy, I'd like to talk about..."
+                                      class="w-full bg-black border border-white/10 p-3 text-sm font-mono text-white focus:border-purple-500 outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn"
+                                class="flex items-center gap-2 border border-purple-500 text-purple-500 px-6 py-2 text-xs font-mono hover:bg-purple-500/10 transition-all uppercase tracking-widest disabled:opacity-50">
+                            <span>Send Message</span> <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                        </button>
+                        <p id="status-msg" class="text-[10px] font-mono text-purple-400 mt-4 uppercase tracking-widest hidden animate-pulse"></p>
                     </form>
-                    <p id="status" class="text-[10px] font-mono text-purple-400 mt-4 hidden"></p>
                 </div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer class="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 border border-purple-500 flex items-center justify-center font-mono text-[10px] text-purple-500">S</div>
+                <span class="font-mono text-xs text-white uppercase tracking-widest">Swamy Kandula</span>
+            </div>
+            
+            <div class="flex gap-6 text-zinc-500">
+                <a href="https://github.com/swamykandula" target="_blank" class="hover:text-purple-400 transition-colors"><i data-lucide="github" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-purple-400 transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-purple-400 transition-colors"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+            </div>
+
+            <div class="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                © 2024 Built by Swamy Kandula
+            </div>
+        </footer>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Aesthetic Accents -->
+    <div class="fixed top-0 left-0 w-1 h-screen bg-gradient-to-b from-purple-500/20 to-transparent pointer-events-none opacity-30"></div>
+    <div class="fixed bottom-0 right-10 w-40 h-[1px] bg-purple-500/10 pointer-events-none"></div>
+
     <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
         // Initialize EmailJS
         (function() {
             emailjs.init("YPS0OU68qBecZikqg");
         })();
 
-        // Data
-        const projects = [
-            { title: "Intuitive Drone Control", stack: "Unity | Leap Motion", desc: "A virtual environment for pilot training using Leap Motion for hand tracking." },
-            { title: "Active Control of Railway Pantograph", stack: "MATLAB | PID", desc: "Optimizing PID control parameters via Genetic Algorithms." },
-            { title: "Input Control Module for PantOHE", stack: "C# | .NET", desc: "Interface for simulating pantographs and catenary systems." },
-            { title: "Crimson Fleet (Robo Wars)", stack: "Fusion 360", desc: "Mechanical design and fabrication of a competitive combat robot." }
-        ];
+        const form = document.getElementById('contact-form');
+        const statusMsg = document.getElementById('status-msg');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = submitBtn.querySelector('span');
 
-        const skills = [
-            { cat: "Software/CAD", items: ["Inventor", "Fusion 360", "AutoCAD", "SolidWorks", "Ansys"] },
-            { cat: "Programming", items: ["C#", "Python", "MATLAB", "ROS", "Gazebo"] },
-            { cat: "Fabrication", items: ["Machining", "Drilling", "Lathe", "Sand Casting"] }
-        ];
-
-        // Render Projects
-        const pGrid = document.getElementById('projects-grid');
-        projects.forEach(p => {
-            pGrid.innerHTML += `
-                <div class="border border-white/10 p-6 flex flex-col justify-between bg-zinc-900/20">
-                    <div>
-                        <div class="text-[10px] uppercase font-mono text-zinc-500 mb-2">${p.stack}</div>
-                        <h3 class="text-xl font-bold text-white mb-3 font-mono">${p.title}</h3>
-                        <p class="text-zinc-400 text-sm italic">${p.desc}</p>
-                    </div>
-                </div>
-            `;
-        });
-
-        // Render Skills
-        const sGrid = document.getElementById('skills-grid');
-        skills.forEach(s => {
-            let itemsHtml = s.items.map(i => `<div class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400">${i}</div>`).join('');
-            sGrid.innerHTML += `
-                <div class="flex flex-col gap-6">
-                    <h3 class="text-xs font-mono uppercase text-purple-500 flex items-center gap-2">
-                        <div class="w-4 h-[1px] bg-purple-500"></div> ${s.cat}
-                    </h3>
-                    <div class="flex flex-wrap gap-2">${itemsHtml}</div>
-                </div>
-            `;
-        });
-
-        // Form Handler
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const status = document.getElementById('status');
-            status.innerText = "Transmitting...";
-            status.classList.remove('hidden');
 
-            emailjs.send("service_8qtxjp5", "template_9vlvahd", {
-                from_email: document.getElementById('email').value,
-                message: document.getElementById('message').value,
-                to_name: 'Swamy Kandula'
-            }).then(() => {
-                status.innerText = "Message sent successfully!";
-                document.getElementById('contact-form').reset();
-            }).catch(() => {
-                status.innerText = "Failed to send. Try again.";
-            });
+            const serviceID = "service_8qtxjp5";
+            const templateID = "template_9vlvahd";
+
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Update UI to sending state
+            btnText.innerText = 'Transmitting...';
+            submitBtn.disabled = true;
+            statusMsg.innerText = 'Sending...';
+            statusMsg.classList.remove('hidden');
+
+            const templateParams = {
+                from_email: email,
+                message: message,
+                to_name: 'Swamy Kandula',
+            };
+
+            emailjs.send(serviceID, templateID, templateParams)
+                .then(() => {
+                    statusMsg.innerText = 'Message sent successfully!';
+                    btnText.innerText = 'Send Message';
+                    submitBtn.disabled = false;
+                    form.reset();
+                    setTimeout(() => {
+                        statusMsg.classList.add('hidden');
+                    }, 5000);
+                })
+                .catch((err) => {
+                    console.error('EmailJS Error:', err);
+                    statusMsg.innerText = 'Failed to send message. Please try again.';
+                    btnText.innerText = 'Send Message';
+                    submitBtn.disabled = false;
+                    setTimeout(() => {
+                        statusMsg.classList.add('hidden');
+                    }, 5000);
+                });
         });
-
-        lucide.createIcons();
     </script>
 </body>
 </html>
