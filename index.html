@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swamy Kandula | Robotics & Automation Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: black; color: #d4d4d8; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        .selection-purple::selection { background: rgba(168, 85, 247, 0.3); color: white; }
+        html { scroll-behavior: smooth; }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            bottom: 50%;
+            animation: scan 4s linear infinite;
+        }
+        @keyframes scan {
+            0% { bottom: 100%; }
+            100% { bottom: 0%; }
+        }
+    </style>
+</head>
+<body class="selection-purple relative overflow-x-hidden">
+
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-0" 
+         style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 30px 30px;">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 right-0 p-6 z-50 md:p-10">
+        <div class="flex flex-col items-end gap-2 md:flex-row md:gap-8 font-mono text-xs uppercase tracking-[0.2em] bg-black/50 backdrop-blur-sm p-4 rounded-lg md:bg-transparent">
+            <a href="#home" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>home</a>
+            <a href="#projects" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>projects</a>
+            <a href="#skills" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>skills</a>
+            <a href="#about-me" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>about-me</a>
+            <a href="#contacts" class="hover:text-purple-400 transition-colors"><span class="text-purple-500 mr-1 opacity-50">#</span>contacts</a>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="fixed left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 z-40 text-zinc-500">
+        <div class="h-24 w-[1px] bg-white/10"></div>
+        <a href="https://github.com/swamykandula" target="_blank" class="hover:text-purple-400 transition-colors"><i data-lucide="github" size="18"></i></a>
+        <a href="#" class="hover:text-purple-400 transition-colors"><i data-lucide="linkedin" size="18"></i></a>
+        <div class="h-24 w-[1px] bg-white/10"></div>
+    </div>
+
+    <main class="max-w-5xl mx-auto px-6 py-20 relative z-10">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[80vh] flex flex-col justify-center items-start pt-20">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex-1 order-2 md:order-1">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Hi, I'm <span class="text-purple-500">Swamy Kandula.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-zinc-400 mb-8 max-w-xl font-mono leading-relaxed">
+                        Robotics & Automation Engineer | Specializing in <span class="text-white">Intelligent Systems</span> and Advanced Engineering.
+                    </p>
+                    <div class="inline-block border border-white/10 p-4 mb-8 bg-zinc-900/30">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 animate-pulse"></div>
+                            <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">
+                                Currently: Pursuing Master’s at SRH Uni Berlin
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#projects" class="inline-flex items-center gap-3 border border-purple-500 text-purple-500 px-8 py-3 font-mono text-sm hover:bg-purple-500/10 transition-all">
+                            View My Work <i data-lucide="arrow-right" size="16"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative order-1 md:order-2">
+                    <div class="w-64 h-64 md:w-80 md:h-80 border border-purple-500/30 relative z-10 p-2 group overflow-hidden bg-zinc-900">
+                        <div class="w-full h-full relative overflow-hidden bg-zinc-800">
+                            <img src="https://i.postimg.cc/T3bjvWK2/Whats-App-Image-2026-02-24-at-14-45-26.jpg" alt="Swamy" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-20 h-20 border-t border-r border-purple-500"></div>
+                    <div class="absolute -bottom-4 -left-4 w-20 h-20 border-b border-l border-purple-500"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote -->
+        <section class="py-32">
+            <div class="relative max-w-2xl mx-auto text-center border-l-2 border-purple-500/30 pl-8 md:pl-12 py-4">
+                <p class="text-xl md:text-2xl font-mono italic text-zinc-300">
+                    “Engineering is not just about building machines; it's about solving the invisible friction between potential and reality.”
+                </p>
+                <span class="block mt-4 text-xs font-mono uppercase tracking-widest text-zinc-500">— S. Kandula</span>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-20">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-2xl font-mono font-bold text-white"><span class="text-purple-500 mr-2">#</span>projects</h2>
+                <div class="h-[1px] bg-white/10 flex-grow"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
+                <!-- Projects injected here -->
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="py-20">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-2xl font-mono font-bold text-white"><span class="text-purple-500 mr-2">#</span>skills</h2>
+                <div class="h-[1px] bg-white/10 flex-grow"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12" id="skills-grid">
+                <!-- Skills injected here -->
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about-me" class="py-20">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-2xl font-mono font-bold text-white"><span class="text-purple-500 mr-2">#</span>about-me</h2>
+                <div class="h-[1px] bg-white/10 flex-grow"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                    <p class="text-zinc-400 mb-6 leading-relaxed">Based in Berlin, Germany, I bridge the gap between Mechanical Engineering and Robotics. I thrive on analytical problem-solving and a hands-on approach to building technical systems.</p>
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-white font-mono text-sm mb-4 uppercase tracking-widest">Education</h4>
+                            <div class="border-l border-white/10 ml-2 pl-6 space-y-4">
+                                <div>
+                                    <p class="text-sm font-mono text-white">Master’s in Robotics and Automation</p>
+                                    <p class="text-xs text-zinc-500">SRH Uni Berlin | 2025 - Present</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center p-8 bg-zinc-900/10 border border-white/5">
+                    <div class="animate-spin-slow"><i data-lucide="cpu" class="text-purple-500/40" size="80"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacts -->
+        <section id="contacts" class="py-20">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-2xl font-mono font-bold text-white"><span class="text-purple-500 mr-2">#</span>contacts</h2>
+                <div class="h-[1px] bg-white/10 flex-grow"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <p class="text-zinc-400 mb-8">Interested in collaboration? Let's connect.</p>
+                    <div class="space-y-4 font-mono text-sm text-zinc-500">
+                        <div class="flex items-center gap-4"><i data-lucide="mail" class="text-purple-500" size="16"></i> <a href="mailto:kandulaswamy3@gmail.com">kandulaswamy3@gmail.com</a></div>
+                        <div class="flex items-center gap-4"><i data-lucide="github" class="text-purple-500" size="16"></i> <a href="https://github.com/swamykandula">swamykandula</a></div>
+                    </div>
+                </div>
+                <div class="border border-white/10 p-8 bg-zinc-900/20">
+                    <form id="contact-form" class="space-y-4">
+                        <input type="email" id="email" required placeholder="Your Email" class="w-full bg-black border border-white/10 p-3 text-sm font-mono text-white outline-none focus:border-purple-500">
+                        <textarea id="message" required rows="4" placeholder="Your Message" class="w-full bg-black border border-white/10 p-3 text-sm font-mono text-white outline-none focus:border-purple-500 resize-none"></textarea>
+                        <button type="submit" class="flex items-center gap-2 border border-purple-500 text-purple-500 px-6 py-2 text-xs font-mono hover:bg-purple-500/10">SEND MESSAGE <i data-lucide="send" size="14"></i></button>
+                    </form>
+                    <p id="status" class="text-[10px] font-mono text-purple-400 mt-4 hidden"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YPS0OU68qBecZikqg");
+        })();
+
+        // Data
+        const projects = [
+            { title: "Intuitive Drone Control", stack: "Unity | Leap Motion", desc: "A virtual environment for pilot training using Leap Motion for hand tracking." },
+            { title: "Active Control of Railway Pantograph", stack: "MATLAB | PID", desc: "Optimizing PID control parameters via Genetic Algorithms." },
+            { title: "Input Control Module for PantOHE", stack: "C# | .NET", desc: "Interface for simulating pantographs and catenary systems." },
+            { title: "Crimson Fleet (Robo Wars)", stack: "Fusion 360", desc: "Mechanical design and fabrication of a competitive combat robot." }
+        ];
+
+        const skills = [
+            { cat: "Software/CAD", items: ["Inventor", "Fusion 360", "AutoCAD", "SolidWorks", "Ansys"] },
+            { cat: "Programming", items: ["C#", "Python", "MATLAB", "ROS", "Gazebo"] },
+            { cat: "Fabrication", items: ["Machining", "Drilling", "Lathe", "Sand Casting"] }
+        ];
+
+        // Render Projects
+        const pGrid = document.getElementById('projects-grid');
+        projects.forEach(p => {
+            pGrid.innerHTML += `
+                <div class="border border-white/10 p-6 flex flex-col justify-between bg-zinc-900/20">
+                    <div>
+                        <div class="text-[10px] uppercase font-mono text-zinc-500 mb-2">${p.stack}</div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono">${p.title}</h3>
+                        <p class="text-zinc-400 text-sm italic">${p.desc}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Render Skills
+        const sGrid = document.getElementById('skills-grid');
+        skills.forEach(s => {
+            let itemsHtml = s.items.map(i => `<div class="border border-white/10 px-3 py-2 text-xs font-mono text-zinc-400">${i}</div>`).join('');
+            sGrid.innerHTML += `
+                <div class="flex flex-col gap-6">
+                    <h3 class="text-xs font-mono uppercase text-purple-500 flex items-center gap-2">
+                        <div class="w-4 h-[1px] bg-purple-500"></div> ${s.cat}
+                    </h3>
+                    <div class="flex flex-wrap gap-2">${itemsHtml}</div>
+                </div>
+            `;
+        });
+
+        // Form Handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const status = document.getElementById('status');
+            status.innerText = "Transmitting...";
+            status.classList.remove('hidden');
+
+            emailjs.send("service_8qtxjp5", "template_9vlvahd", {
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                to_name: 'Swamy Kandula'
+            }).then(() => {
+                status.innerText = "Message sent successfully!";
+                document.getElementById('contact-form').reset();
+            }).catch(() => {
+                status.innerText = "Failed to send. Try again.";
+            });
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
